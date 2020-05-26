@@ -11,27 +11,25 @@ var sv = getParam("sv");
 <html>
 <head>
 	
-<script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script src="https://cdn
+		player = new Clappr.Player({
+			source: sv,
+			parentId: '#player',
+			width: '100%', height: '100%',
+			hideMediaCont.jsdelivr.net/clappr/latest/clappr.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
-
 <script src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.js"></script>
-
 <script async src='http://raw.githack.com/cdn-cgi/bm/cv/2172558837/api.js'></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="1d0e90e453c8a6c5486758a0-|49"></script>	
 </head>
 <body style="margin:0px">
 <div style="background:#ccc;" id="player"></div>
 <script>
 	if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Mobile Safari/i) || navigator.userAgent.match(/Blackberry/i)){
 		document.write("\<video style=\"width:100%;height:100%\" controls autoplay preload=\"auto\" src=\""+sv+"\"\>\<\/video\>");
-	}else {
-		player = new Clappr.Player({
-			source: sv,
-			parentId: '#player',
-			width: '100%', height: '100%',
-			hideMediaControl: true,
+	}else {rol: true,
 			autoPlay: true
 		});	
 	}
@@ -57,7 +55,7 @@ body {
     text-align: center;
     font-family:Changa,"Segoe UI";
     font-weight: bold;
-content: " http://kora-g.ml | موقع كوره جي لايف ";
+content: " شاهد جميع المباريات علي موقع كوره جي لايف";
 }
 
 .media-control[data-media-control] .media-control-background[data-background] {

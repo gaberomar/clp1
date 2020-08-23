@@ -33,6 +33,10 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
   
 </head>
 <body>
+ <script type="text/javascript">
+            var cu_player = '<video controls="" height="'+$('div#player_custom_min').innerHeight() +'" poster="" src="{src}" width="100%"></video>'
+            var mdm = new MobileDetect(window.navigator.userAgent);
+        </script> 
 <div id="player">
 </div>
 

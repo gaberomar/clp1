@@ -64,9 +64,16 @@ width: '100%',
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
           },
           parentId: '#player'
-        });
+ });
+            player.on(Clappr.Events.PLAYER_STOP, playerStop);
+            function playerStop(){
+             location.reload();
+            }
+            player.setVolume(100); // 1%
+            player.play();
           
     </script>
+
 
 <div 0="" id="playe&lt;body style=" margin:="" padding:="">
 <a href="http://raw.githack.com/gaberomar/clp2/master/clp2.html" target="_blank"></a>

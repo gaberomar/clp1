@@ -44,11 +44,10 @@ html
  <div id="player">
  </div>
  <script type="7fd48e4e9b637a138f663eba-text/javascript">
-
  var playerElement = document.getElementById("player");
  var player = new Clappr.Player({
  parentId: "#Player",
-        source : sv,
+ source : sv,
  command: 'playM3u8',
  command: 'video/m3u8',   
  width: '100%',
@@ -60,12 +59,12 @@ html
  stretching: 'exactfit',
  plugins: [DashShakaPlayback, LevelSelector],
  shakaConfiguration: {
- preferredAudioLanguage: 'pt-BR',
-  abr: { 
+                    preferredAudioLanguage: 'pt-BR',
+                    abr: { 
                         defaultBandwidthEstimate: 50000
                     },
- streaming: {
-   rebufferingGoal: 2,
+                    streaming: {
+                        rebufferingGoal: 2,
                         bufferingGoal: 4,
                         startAtSegmentBoundary: true,
                         retryParameters: {
@@ -73,7 +72,7 @@ html
                             maxAttempts: 128,
                             baseDelay: 200,
                             backoffFactor: 4,
-                        fuzzFactor: 0.5,
+                            fuzzFactor: 0.5,
                         }
                     },
                     manifest: {
@@ -88,19 +87,20 @@ html
                     if(smart) {
                         return;
                     }
-              shaka_player.getNetworkingEngine().registerRequestFilter(qengine.ResFilter.bind(qengine));
-                    const qengine = new qEngine();
-                    shaka.getNetworkingEngine().registerRequestFilter(qengine.ReqFilter.bind(qengine));
-                    shaka.getNetworkingEngine().registerResponseFilter(qengine.ResFilter.bind(qengine));
-                  
-                }
-        });
+              
             player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
              location.reload();
             }
             player.setVolume(100); // 1%
             player.play();
+      shaka_player.getNetworkingEngine().registerRequestFilter(qengine.ResFilter.bind(qengine));
+                    const qengine = new qEngine();
+                    shaka.getNetworkingEngine().registerRequestFilter(qengine.ReqFilter.bind(qengine));
+                    shaka.getNetworkingEngine().registerResponseFilter(qengine.ResFilter.bind(qengine));
+                   
+                }
+            });
     </script>
 
 </div>

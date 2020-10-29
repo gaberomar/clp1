@@ -65,7 +65,7 @@ html
                             baseDelay: 200,
                             backoffFactor: 4,
                             fuzzFactor: 0.5,
-                                   }
+                        }
                     },
                     manifest: {
                         dash: {
@@ -76,22 +76,23 @@ html
                 shakaOnBeforeLoad: function(shaka) {
                     const smart = navigator.userAgent.match(/.+SmartTV.+/);
 
+ player.on(Clappr.Events.PLAYER_STOP, playerStop);
+            function playerStop(){
+             location.reload();
+ }
                     if(smart) {
                         return;}
+                   
                     const qengine = new qEngine();
                     shaka.getNetworkingEngine().registerRequestFilter(qengine.ReqFilter.bind(qengine));
                     shaka.getNetworkingEngine().registerResponseFilter(qengine.ResFilter.bind(qengine));
                 }
             });
-      player.on(Clappr.Events.PLAYER_STOP, playerStop);
-            function playerStop(){
-             location.reload();
-            }
+     
             player.setVolume(100); // 1%
             player.play();
  
 </script>
-
 </div>
 <link href="http://raw.githack.com/gaberomar/tube.css/master/tube.css" rel="stylesheet"></link>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="7fd48e4e9b637a138f663eba-|49" defer=""></script>

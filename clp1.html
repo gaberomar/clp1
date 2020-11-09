@@ -2,7 +2,6 @@
 <html><head>
 <style>html,body{margin:0;padding:0;background:#000;;}</style></head>
 <meta charset="utf-8">
-
 <script type="a35557faf9805d1fdd774565-text/javascript">
 function getParam ( sname )
 {
@@ -14,16 +13,13 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
-
 <script type='text/javascript'>
 //<![CDATA[
-
 document.addEventListener('click', function(evt) {
   if (evt.target.href && evt.target.href.split('?')[0].endsWith("m3u8")) {
     evt.preventDefault();
     evt.stopPropagation();
      Player.extension.sendMessage({command: 'playM3u8', url: evt.target.href}, function(response) {});
-
 //]]>
 </script> 
   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js" type="a35557faf9805d1fdd774565-text/javascript"></script>
@@ -173,7 +169,7 @@ textarea {
     background: #b13a26;
 }
 .spinner-three-bounce[data-spinner] {
-    background: url(http://1.bp.blogspot.com/-WX4WLBk5TFA/X6l3BLidA4I/AAAAAAAAJg8/xTJ1fjspe-IiXL897mM8ck7wSsb5U81UgCK4BGAYYCw/s1600/back.gif) no-repeat center center;
+    background: url(https://3.bp.blogspot.com/-B-2w8Meb_Kc/WbavmEzanfI/AAAAAAAAPAw/W_0ezQ-oKqsTZ4lyNMF_brVLLpOg5QQCgCPcBGAYYCw/s1600/loader.gif) no-repeat center center;
     height: 80px!important;
     width: 100%!important;
     top: 45%!important;
@@ -182,7 +178,6 @@ textarea {
 .spinner-three-bounce[data-spinner]>div {
     width: 0!important;
 }
-
 
 /* ]]> */
 </style>

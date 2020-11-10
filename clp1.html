@@ -92,72 +92,60 @@ document.addEventListener('click', function(evt) {
  <body>
 <div id="player">
 </div>
-<script type="7fd48e4e9b637a138f663eba-text/javascript">
-function tvf(sv)
-{
-document.write('<scr'+'ipt type=\"text/javascript\">sv=['+sv+']</scr'+'ipt>');
-}
-function gParam(name)
-{
-  var start=location.search.indexOf("?"+name+"=");
-  if (start<0) start=location.search.indexOf("$"+name+"=");
-  if (start<0) return '';
-  start += name.length+2;
-  var end=location.search.indexOf("$",start)-1;
-  if (end<0) end=location.search.length;
-  var result='';
-  for(var i=start;i<=end;i++) {
-    var c=location.search.charAt(i);
-    result=result+(c=='+'?' ':c);
-  }
-  return unescape(result);
-}
-tvf(gParam('sv'));
-function load_player(sv_channel)
-{
-var playerElement = document.getElementById('player');
-var player = new Clappr.Player({
-source: sv_channel, 
- height: '100%',
+ var playerElement = document.getElementById("player");
+ var player = new Clappr.Player({
+  parentId: "#Player",
+  source : sv,
+ mimeType: "application/m3u8", 
+ command: 'playM3u8', 
  width: '100%',
- mimeType: "application/m3u8",
- poster: '',
-watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
-mediacontrol: {seekbar: "#0ef429", buttons: "#0ef429"}, 
+ height: "100%",
+ autoPlay: true,
+ poster:"",
+ watermark: "", position: 'top-right',
+   mediacontrol: {seekbar: "#0ef429", buttons: "#0ef429"},  
+ stretching: 'exactfit',
  plugins: [DashShakaPlayback, LevelSelector],
  shakaConfiguration: {
-  preferredAudioLanguage: 'pt-BR', 
-  streaming: {
-  rebufferingGoal: 6,
-  bufferingGoal: 2,
-  retryParameters: {
-    timeout: 3000,
-    maxAttempts: 128,
-    baseDelay: 200,
-    backoffFactor: 4,
-    fuzzFactor: 0.5,
-    hlsJSLiveSyncDuration: 3,
-    playbackConfig: {
-    crossorigin: 'use-credentials'
+ preferredAudioLanguage: 'pt-BR',
+  abr: { 
+                        defaultBandwidthEstimate: 50000
+                    },
+ streaming: {
+   rebufferingGoal: 2,
+                        bufferingGoal: 4,
+                        startAtSegmentBoundary: true,
+                        retryParameters: {
+                            timeout: 3000,
+                            maxAttempts: 128,
+                            baseDelay: 200,
+                            backoffFactor: 4,
+                            fuzzFactor: 0.5,
+  }
 }
-  },
- },
-
- }
-});     
-player.attachTo(playerElement);
-player.load({source: sv_channel, command: 'video_url.m3u8', mimeType: 'application/m3u8'});
-
-}
-load_player(sv);
- player.on(Clappr.Events.PLAYER_STOP, playerStop);
- function playerStop(){
-       } location.reload();
-player.play();
-
-
-</script>
-
+      },
+          shakaOnBeforeLoad: function(shaka_player)
+ {
+ const smart = navigator.userAgent.match(/.+SmartTV.+/);
+ if(smart) {
+                        return; }
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+           },
+    
+    
+        }
+);
+         player.on(Clappr.Events.PLAYER_STOP, playerStop);
+            function playerStop(){
+             location.reload();
+ const qengine = new qEngine();
+                    shaka.getNetworkingEngine().registerRequestFilter(qengine.ReqFilter.bind(qengine));
+                    shaka.getNetworkingEngine().registerResponseFilter(qengine.ResFilter.bind(qengine));
+            }
+            player.setVolume(100); // 1%
+            player.play();
+ load_player(sv);
+    </script>
 <style>
 /* <![CDATA[ */
 

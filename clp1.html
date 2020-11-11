@@ -23,6 +23,34 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+
+   
+<script type="7fd48e4e9b637a138f663eba-text/javascript">
+
+function tvf(sv)
+{
+document.write('<scr'+'ipt type=\"text/javascript\">sv=['+sv+']</scr'+'ipt>');
+}
+function gParam(name)
+{
+  var start=location.search.indexOf("?"+name+"=");
+  if (start<0) start=location.search.indexOf("$"+name+"=");
+  if (start<0) return '';
+  start += name.length+2;
+  var end=location.search.indexOf("$",start)-1;
+  if (end<0) end=location.search.length;
+  var result='';
+  for(var i=start;i<=end;i++) {
+    var c=location.search.charAt(i);
+    result=result+(c=='+'?' ':c);
+  }
+  return unescape(result);
+}
+tvf(gParam('sv'));
+function load_player(sv_channel)
+{
+
+</script>
   
 
 <SCRIPT> 
@@ -59,7 +87,6 @@ document.addEventListener('click', function(evt) {
 //]]>
 </script>
 
-
 <SCRIPT LANGUAGE="JavaScript1.1"> 
  
         function right(e) { 
@@ -93,41 +120,19 @@ document.addEventListener('click', function(evt) {
  <body>
 <div id="player">
 </div>
-<script type="7fd48e4e9b637a138f663eba-text/javascript">
-
-function tvf(sv)
-{
-document.write('<scr'+'ipt type=\"text/javascript\">sv=['+sv+']</scr'+'ipt>');
-}
-function gParam(name)
-{
-  var start=location.search.indexOf("?"+name+"=");
-  if (start<0) start=location.search.indexOf("$"+name+"=");
-  if (start<0) return '';
-  start += name.length+2;
-  var end=location.search.indexOf("$",start)-1;
-  if (end<0) end=location.search.length;
-  var result='';
-  for(var i=start;i<=end;i++) {
-    var c=location.search.charAt(i);
-    result=result+(c=='+'?' ':c);
-  }
-  return unescape(result);
-}
-tvf(gParam('sv'));
-function load_player(sv_channel)
-{
+  <script type="7fd48e4e9b637a138f663eba-text/javascript">
 var playerElement = document.getElementById('player');
-var player = new Clappr.Player({
- height: '100%',
- width: '100%',
- poster: '',
-watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
- mediacontrol: {seekbar: "#ffdc09", buttons: "#ffdc09"},  
- plugins: [DashShakaPlayback, LevelSelector],
- shakaConfiguration: {
-                    preferredAudioLanguage: 'pt-BR',              
-  streaming: {
+   var player = new Clappr.Player({
+              source:sv,
+width: '100%',
+                height: "100%",
+                autoPlay: true,
+                mediacontrol: {seekbar: "#c5ff26", buttons: "#FFFFFF"},  
+                stretching: 'exactfit',
+     plugins: [DashShakaPlayback, LevelSelector],
+         shakaConfiguration: {
+            preferredAudioLanguage: 'pt-BR',
+            streaming: {
   rebufferingGoal: 6,
   bufferingGoal: 2,
   retryParameters: {
@@ -136,29 +141,17 @@ watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUU
     baseDelay: 200,
     backoffFactor: 4,
     fuzzFactor: 0.5,
-    hlsJSLiveSyncDuration: 3,
-    playbackConfig: {
-    crossorigin: 'use-credentials'
+  }
 }
-  },
- },
-
- }
-});     
-
-player.load({source: sv_channel, command: 'video_url.m3u8', mimeType: 'application/m3u8'});
-player.play();
-
-}
-load_player(sv);
- player.on(Clappr.Events.PLAYER_STOP, playerStop);
- function playerStop(){
-       } location.reload();
-
-</script>
-
-
-
+         },
+          shakaOnBeforeLoad: function(shaka_player) {
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+          },
+          parentId: '#player'
+        });
+          
+    </script>
+   
 <style>
 /* <![CDATA[ */
 

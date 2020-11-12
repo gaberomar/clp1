@@ -54,10 +54,10 @@ document.onmousedown = noleftclick;
 <script type='text/javascript'>
 //<![CDATA[
 document.addEventListener('click', function(evt) {
-  if (evt.target.href && evt.target.href.split('?')[0].endsWith("m3u8")) {
+  if (evt.target.href && evt.target.href.split('?')[0].endsWith("mpd")) {
     evt.preventDefault();
     evt.stopPropagation();
-   Player.extension.sendMessage({command: 'playM3u8', url: evt.target.href}, function(response) {});
+   Player.extension.sendMessage({command: 'playMpd', url: evt.target.href}, function(response) {});
   }
 });
 //]]>
@@ -161,7 +161,7 @@ load_player(sv);
 </script>
 
 
-
+   
 <style>
 /* <![CDATA[ */
 

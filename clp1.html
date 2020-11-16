@@ -101,16 +101,8 @@ body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{f
 <div id="player">
 </div>
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
-ref = document.referrer;
-whitelist = ['futemax.live'];
-match = false;
-if (ref.match(/^https?:\/\/([^\/]+\.)?futemax\.live(\/|$)/i)) {
-  match = true;
-}
-if(match)
-{
-    
-      }
+
+var playerElement = document.getElementById('player');
 var player = new Clappr.Player({
                 parentId: "#Player",
                 source: sv,   

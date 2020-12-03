@@ -80,21 +80,24 @@ var player = new Clappr.Player({
             
                 }
         });
-           
+         
 document.addEventListener('click', function(evt) {
   if (evt.target.href && evt.target.href.split('?')[0].endsWith("m3u8")) {
     evt.preventDefault();
     evt.stopPropagation();
    Player.extension.sendMessage({command: 'playM3u8', url: evt.target.href}, function(response) {});
-  }
-            player.on(Clappr.Events.PLAYER_STOP, playerStop);
+  
+          
+            }
+  player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
              location.reload();
-            }
+
             player.setVolume(100); // 1%
             player.play();
-
+}
 });
+
 
           //]]>
     </script>

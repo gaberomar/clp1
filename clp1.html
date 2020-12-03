@@ -97,16 +97,20 @@ function playM3u8(url){
                     autoPlay: 'true',
                     width: '100%',
                     height: '100%',
-                    plugins:[DashShakaPlayback,LevelSelector],
-                    mediacontrol:{seekbar:"#0087DB",buttons:"#0087DB"},
-                    shaka: {
+                   plugins: [DashShakaPlayback, LevelSelector],
+                   mediacontrol:{seekbar:"#0087DB",buttons:"#0087DB"},
+                   stretching: 'exactfit',
+ 
+                   shakaConfiguration: {
+                  preferredAudioLanguage: 'pt-BR',
+                  shaka: {
                            appId: '9DFB77C0',
                          media: {
                  type: DashShakaPlayback.None,
                
-                } }
+                } }}
           });
-       player.on(Clappr.Events.PLAYER_STOP, playerStop);
+          player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
              location.reload();
             }
@@ -120,7 +124,6 @@ function playM3u8(url){
 
              //]]>
           </script>
-
 <style>
 /* <![CDATA[ */
 

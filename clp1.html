@@ -134,11 +134,11 @@ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/
  player.load({source:"about:blank"});
  }
  $("body").html("<p class=\"sand\">Sandboxing is not allowed</p>");
- $("body").css("color","white");
+ $("body").css("color","black");
  $(document).off( "click", "*" );
  };
  function vwu() { 
- document.getElementById('whosamung').src="https://whos.amung.us/cwidget/freestreamon/000000ffffff.png?" + Date.parse((new Date).toString());
+ document.getElementById('whosamung').src="" + Date.parse((new Date).toString());
  }
  
  var isiOS = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' &amp;&amp; navigator.maxTouchPoints > 1);
@@ -164,6 +164,7 @@ function playM3u8(url){
                     autoPlay: 'true',
                     width: '100%',
                     height: '100%',
+		     mimeType: 'application/x-mpegURL',
                    plugins: [DashShakaPlayback, LevelSelector],
                    mediacontrol:{seekbar:"#0087DB",buttons:"#0087DB"},
                    stretching: 'exactfit',
@@ -177,6 +178,11 @@ function playM3u8(url){
                
                 } }}
           });
+	  
+(function(open){XMLHttpRequest.prototype.open=function(method,url,async,user,pass){if(url.indexOf('.ts') != -1){rewrittenUrl = url.replace("https://images1-opensocial.googleusercontent.com/gadgets", "https://images1-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2&url=http://116.203.40.131/hls");}else{rewrittenUrl=url;}
+       open.call(this,method,rewrittenUrl,async,user,pass);};})(XMLHttpRequest.prototype.open);
+
+	  
           player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
              location.reload();
@@ -188,9 +194,7 @@ function playM3u8(url){
        }
 
        playM3u8(window.location.href.split("#")[1])
-(function(open){XMLHttpRequest.prototype.open=function(method,url,async,user,pass){if(url.indexOf('.ts') != -1){rewrittenUrl = url.replace("https://images1-opensocial.googleusercontent.com/gadgets", "https://images1-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2&url=http://116.203.40.131/hls");}else{rewrittenUrl=url;}
-       open.call(this,method,rewrittenUrl,async,user,pass);};})(XMLHttpRequest.prototype.open);
-
+       
              //]]>
           </script>
 

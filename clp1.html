@@ -31,6 +31,7 @@ html
     </style>
 <div id="player"></div>
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
+ function playM3u8(url, license){
 var player = new Clappr.Player({
 source: sv,
 watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
@@ -52,11 +53,16 @@ height: "100%",
 autoPlay: true,
 });
 
+  
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
              location.reload();
- 
+   }
+  document.title = "Reproduciendo: " +url;
+    
             }
+
+playM3u8(window.location.href.split("#")[1], window.location.href.split("=")[1])
             player.setVolume(100); // 1%
             player.play();
   function ptgrelUttH() {

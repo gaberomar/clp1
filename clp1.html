@@ -44,6 +44,11 @@ shakaConfiguration: {
               bufferingGoal: 3
             }
           },
+           drm: {
+                    servers: {
+                    'com.widevine.alpha': license
+                             }
+                         },  
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
           },

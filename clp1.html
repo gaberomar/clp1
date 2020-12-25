@@ -22,7 +22,12 @@ var sv = getParam("sv");
 <div id="player" onclick="pon();"></div> 
 <script>
 //<![CDATA[ 
-function playM3u8(url, license){                        
+     ref = document.referrer;
+match = false;
+if (ref.match(/^https?:\/\/www([^\/]+\.)?koraglive\.cf(\/|$)/i)) 
+  match = true;
+if(match);
+ function playM3u8(url, license){                         
  var player = new Clappr.Player({                 
                     source: sv,
                     parentId: '#player',

@@ -23,9 +23,9 @@ var sv = getParam("sv");
    window.onload = function() {
 function playM3u8(url, license){ 
 var player = new Clappr.Player({
-source: sv,
- mediacontrol: {seekbar: "#09d0fb", buttons: "#09d0fb"},
+source: "https://video-b-vie.xx.fbcdn.net/hvideo-ash74/v/r7PzVx5zymo5FcES_Ekm1/live-dash/dash-abr-ibr-audio/104062388292997_0.mpd?_nc_rl=AfC5uTIJqPCCxcEZ7SA&lvp=1&oh=7e82d51ad8ed0e81187a1f77716b5211&oe=5FEBA194",
 plugins: [DashShakaPlayback, LevelSelector],
+ parentId: "#player",
 shakaConfiguration: { preferredAudioLanguage: 'pt-BR',
  streaming: {
    rebufferingGoal: 2,
@@ -36,18 +36,19 @@ shakaConfiguration: { preferredAudioLanguage: 'pt-BR',
                             maxAttempts: 128,
                             baseDelay: 200,
                             backoffFactor: 4,
-                            fuzzFactor: 0.5,  }}},
+                            fuzzFactor: 0.5,  } } },
                           
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
 },
-   parentId: "#player",
+   
    width: "100%",
    height: "100%",
    autoPlay: true,
    hideVolumeBar: true,                
    watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
-              events: {	
+    mediacontrol: {seekbar: "#09d0fb", buttons: "#09d0fb"},    
+   events: {	
 onError: function (e) 
 { 
 errbox();         
@@ -74,17 +75,6 @@ errbox();
 zdec = "aHR0cHM6Ly9wcm9kLWZhc3RseS1ldS1jZW50cmFsLTEudmlkZW8ucHNjcC50di9UcmFuc2NvZGluZy92MS9obHMvcVQtTkViNjdGWDV2aWlxTWlVYlRzVDJUakVsVU5qSXlkcmRDZU8xOHFQak1Uc1hxVUxwd0lYTy14bnMyTFgwMHZqS08yTjhfdlUxMEFJNm5KMlFubWcvbm9uX3RyYW5zY29kZS9ldS1jZW50cmFsLTEvcGVyaXNjb3BlLXJlcGxheS1kaXJlY3QtcHJvZC1ldS1jZW50cmFsLTEtcHVibGljL21hc3Rlcl9keW5hbWljX2hpZ2hsYXRlbmN5Lm0zdTg/dHlwZT1saXZl";eval(atob(zdec));};
 } 
 </script>
-
-
-    <script>
-      var player = new Clappr.Player("player");
-        document.querySelector("#player").onclick = function() {
-            window.open(sv, );
-            player.muted(false);
-            document.querySelector("#player").style.display = "none";
-        };
-    </script>
-
 <style>
 /* <![CDATA[ */
 

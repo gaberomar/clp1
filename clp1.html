@@ -1,17 +1,7 @@
 ﻿<html>
 <head>
   <title>Reproductor M3U8 & MPD Player</title>
-  <style>
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-        background-color: #000;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+
 <script>
 function getParam ( sname )
 {
@@ -19,8 +9,9 @@ function getParam ( sname )
  var sval =  params.replace("sv=", "");
  return sval;
 }
-var sv = getParam(" ");
+var sv = getParam("sv");
 </script>
+  <style type="text/css">body{margin:0 auto;}</style>
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>

@@ -1,6 +1,7 @@
 ﻿
 
 
+
 <html>
 <head>
  <script type="04b5e936041185998bcb1fdd-text/javascript">
@@ -33,6 +34,7 @@ var sv = getParam(" ");
 
 player=new Clappr.Player({
 source: sv,
+parentId:"#player",  
 width:"100%",
 height:"100%",
  autoPlay: true, 
@@ -58,8 +60,13 @@ streaming: {
   shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
         },
-parentId:"#player",
-    
+    events: {	
+onError: function (e) 
+{ 
+errbox();
+ } 
+      },  
+
  });
        
    player.on(Clappr.Events.PLAYER_STOP, playerStop);
@@ -165,6 +172,7 @@ textarea {
 
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="04b5e936041185998bcb1fdd-|49" defer=""></script></body>
 </html>
+
 
 
 

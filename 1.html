@@ -1,14 +1,7 @@
 ﻿
-
-
-
 <html>
 <head>
- 
-<script type="04b5e936041185998bcb1fdd-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="04b5e936041185998bcb1fdd-text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="04b5e936041185998bcb1fdd-text/javascript"></script>
-<script type="04b5e936041185998bcb1fdd-text/javascript">
+<script>
 function getParam ( sname )
 {
  var params = location.search.substr(location.search.indexOf("?")+1);
@@ -17,7 +10,10 @@ function getParam ( sname )
 }
 var sv = getParam(" ");
 </script>
- <script type="04b5e936041185998bcb1fdd-text/javascript">
+<script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="text/javascript"></script>
+        <script>
         function getUrlVars() {
           var vars = {};
           var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
@@ -26,12 +22,11 @@ var sv = getParam(" ");
             return vars;
         }
         var link = getUrlVars()["src"];  	
-    </script>
+       </script>
 <body style="margin:0;background:#000;">
 <div id="iframeDiv" style="width: 100%;"> 
- <body onload="init()">
 <center><div id="player" onclick="pon();"></div> </center>
-<script type="04b5e936041185998bcb1fdd-text/javascript">
+<script>
 //<![CDATA[ 
 
 player=new Clappr.Player({
@@ -172,19 +167,8 @@ textarea {
 /* ]]> */
 </style>
 
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="04b5e936041185998bcb1fdd-|49" defer=""></script></body>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

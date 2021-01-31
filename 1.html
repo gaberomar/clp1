@@ -1,11 +1,15 @@
 ﻿
+
 <html>
 <head>
-
+  
+<link href='https://cdn.jsdelivr.net/gh/louaykhelifi/clappryoutube/version4.css' rel='stylesheet' type='text/css'/>
 <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="text/javascript"></script>
-     <script>
+ 
+
+<script>
 function getParam ( sname )
 {
  var params = location.search.substr(location.search.indexOf("?")+1);
@@ -17,22 +21,24 @@ var sv = getParam(" ");
 <body style="margin:0;background:#000;">
 <div id="iframeDiv" style="width: 100%;">
  <body onload="init()">
+<style>body {word-break: inherit;} </style>   
 <center><div id="player" onclick="pon();"></div> </center>
 <script>
 //<![CDATA[ 
 
-player=new Clappr.Player({
-source: sv,
-  height: '100%',
-      width: '100%',
-                 parentId: "#player",
-                 autoPlay: true,
-                 hideVolumeBar: true,  
+    var player = new Clappr.Player({
+    source: sv,
+    parentId: "#player",
+    width:"100%",height:"100%",
+    plugins: {core: [LevelSelector], playback:[DashShakaPlayback], },
+    autoPlay: true,
+                 hideVolumeBar: true, 
  mediacontrol: {seekbar: "#00ffff", buttons: "#00ffff"},
  watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
+stretching: 'exactfit',
 plugins:[DashShakaPlayback,LevelSelector],
-  stretching: 'exactfit',
-shakaConfiguration: {
+  
+    shakaConfiguration: {
   preferredAudioLanguage: 'pt-BR',
 },
 streaming: {
@@ -55,8 +61,10 @@ onError: function (e)
 errbox();
  } 
       },  
+  });  
 
- });
+
+
        
    player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
@@ -162,6 +170,8 @@ textarea {
 
 </body>
 </html>
+
+
 
 
 

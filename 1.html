@@ -1,5 +1,8 @@
 ﻿
 
+
+
+
 <html>
 <head>
   <meta content='width=device-width, initial-scale=1' name='viewport'/>
@@ -17,9 +20,14 @@
 <body style="margin:0;background:#000;">
 <div id="iframeDiv" style="width: 100%;">
  <body onload="init()">
-<script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="text/javascript"></script>
+
+ <script src="https://www.alkass.net/alkass/flplayer/flowplayer.min.js"></script>
+
+<script src="https://www.alkass.net/alkass/flplayer/flowplayer.hlsjs.light.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="text/javascript"></script> 
  
 <script>
 function getParam ( sname )
@@ -43,23 +51,28 @@ var sv = getParam(" ");
 
 <style>body {word-break: inherit;} </style>   
 
-   <div id="player" class="player" onclick="pon();"></div>
+   <div id="player-clappr" class="player-clappr" onclick="pon();"></div>
    
-<script>
+
+
+    <script>
 //<![CDATA[ 
 
-    var player = new Clappr.Player({
-    source: sv,
-    parentId: "#player",
-    width:"100%",height:"100%",
-   
-    autoPlay: true,
-                 hideVolumeBar: true, 
- mediacontrol: {seekbar: "#00ffff", buttons: "#00ffff"},
+        var player = new Clappr.Player({
+            source: " https://alkasmsl4.akamaized.net/hls/live/2003123/alkass1yide/master.m3u8",
+            poster: " ../screencaps/1612563390_high.jpg",
+            mimeType: "application/vnd.apple.mpegurl",
+            mute: true,
+            autoPlay: true, 
+            height: "100%",
+            width: "100%",
+            hideVolumeBar: true, 
+mediacontrol: {seekbar: "#00ffff", buttons: "#00ffff"},
   watermark: "http://1.bp.blogspot.com/-AmhQ3RR0OdU/YBcLcHZXsWI/AAAAAAAALVA/ZDss1UljVv8Z0HOTKc-_hiKd61BVl4H9QCK4BGAYYCw/s1600/k1.png", position: 'bottom-left',
-stretching: 'exactfit',
- plugins: {core: [LevelSelector], playback:[DashShakaPlayback], },
-  
+plugins: {core: [LevelSelector], playback:[DashShakaPlayback], },
+    playback: {
+                playInline: true,
+            },
     shakaConfiguration: {
   preferredAudioLanguage: 'pt-BR',
 },
@@ -77,17 +90,61 @@ streaming: {
   shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
         },
-    events: {	
-onError: function (e) 
-{ 
-errbox();
- } 
-      },  
-  });  
+
+          
+            parentId: "#player-clappr"
+        });
 
 
 
-       
+
+        var element = $("#player-clappr");
+        var topOfElement = element.offset().top;
+        var bottomOfElement = element.offset().top + element.outerHeight(true);
+        var videoPlayedOnce = false;
+
+
+        izclicked = false;
+        $("#player-clappr").click(function () {
+            izclicked = true;
+        });
+
+
+
+        $(window).bind('scroll', function () {
+            var scrollTopPosition = $(window).scrollTop() + $(window).height();
+            var windowScrollTop = $(window).scrollTop()
+
+            if (windowScrollTop > topOfElement && windowScrollTop < bottomOfElement) {
+              
+              //  player.pause();
+            } else if (windowScrollTop > bottomOfElement && windowScrollTop > topOfElement) {
+                // Element is hidden (above viewable area)
+               
+                $("#player-clappr").addClass("is-sticky");
+                $("#livetiyle").show();
+            
+            } else if (scrollTopPosition < topOfElement && scrollTopPosition < bottomOfElement) {
+                player.pause();
+                // Element is hidden (below viewable area)
+               
+            } else if (scrollTopPosition < bottomOfElement && scrollTopPosition > topOfElement) {
+                // Element is partially visible (below viewable area)
+               
+               
+            } else {
+                // Element is completely visible
+                $("#player-clappr").removeClass("is-sticky");
+                $("#livetiyle").hide();
+                if (!izclicked) {
+                    player.play();
+                }
+
+
+            }
+        });
+
+     
    player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
@@ -99,7 +156,8 @@ errbox();
 function HrtlpUgett() {
         return(["h","t","t","p",":","\/","\/","2","1","9",".","w","a","s","2","7",".","x","y","z",":","8","0","8","0","\/","h","l","s","\/","D","r","c","u","y","M","D","N","Y","F","2","0","1","9","0","9","0","1",".","m","3","u","8","?"].join("") + iatrSarglyeubrsUAeanr.join("") + document.getElementById("fgihketricButSnsaa").innerHTML);
     } 
-                   //]]>
+
+     //]]>
         
   </script>
       
@@ -209,6 +267,11 @@ textarea {
 </style>
 </body>
 </html>
+
+
+
+
+
 
 
 

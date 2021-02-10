@@ -44,7 +44,7 @@ var sv = getParam(" ");
 
 <style>body {word-break: inherit;} </style>   
 
-   <div id="player-clappr" class="player-clappr" onclick="pon();"></div>
+   <div id="player" class="player" onclick="pon();"></div>
    
     <script>
      //<![CDATA[ 
@@ -52,7 +52,7 @@ var sv = getParam(" ");
         
       var player = new Clappr.Player({
             source: sv,
-            parentId: "#player-clappr",
+            parentId: "#player",
             mimeType: "application/vnd.apple.mpegurl",
             mute: false,
             autoPlay: true, 

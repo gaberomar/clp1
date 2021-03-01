@@ -53,38 +53,21 @@ var sv = getParam("sv");
    mediacontrol: {seekbar: "#00ffff", buttons: "#00ffff"},	 
     plugins: [LevelSelector,DashShakaPlayback, ErrorPlugin, Clappr.FlasHLS], 
    events: {
-            onError: function(e) {
-            r--;
-            var s = player.options.source;
-            // Replace previous line by the following line to simulate successful recovery
-            // var s = (r > 2) ? player.options.source : sv,;
-            var t = 5;
-            var retry = function() {
-                if (t === 0) {
-                var o = player.options;
-                o.source = sv;
-                player.configure(o);
-                return;
-                }
-                Clappr.$('#retryCounter').text(t);
-                t--;
-                setTimeout(retry, 1000);
-            };
+            onError: function(e) { errorPlaying() }
+                }, 
+         errorPlugin: {
+            timeToExpires: 2,
+            onRetry: function(e) {
             player.configure({
-                autoPlay: true,
-                source: 'playback.error',
-                playbackNotSupportedMessage: ' موقع : كوره جي لايف' + ((r > 0)
-                    ? ' ... بث مباشر. <span id="retryCounter"></span> '
-                    : ' موقع : كوره جي لايف'),
-            });
+            source: sv,     
+            autoPlay: true,   
+                  });
             if (r > 0) {
                 retry();
             }
             }}
-
         });
 	
-
                 player.on(Clappr.Events.PLAYER_STOP, playerStop);
                 function playerStop(){
                 location.reload();

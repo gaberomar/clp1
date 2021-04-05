@@ -104,18 +104,27 @@ player = new Clappr.Player({
 	allowUserInteraction: false,
 	persistConfig: false,
 	mediacontrol: {seekbar: "#00ffff", buttons: "#00ffff"},
+	 stretching: 'exactfit',
        plugins: [
-      LevelSelector, DashShakaPlayback, ErrorPlugin, Clappr.FlasHLS
+      LevelSelector, DashShakaPlayback, ErrorPlugin
             ],
    shakaConfiguration: {
-  preferredAudioLanguage: 'pt-BR',           
-    streaming: {
- rebufferingGoal: 15
-          }
-       },
-  shakaOnBeforeLoad: function(shaka_player) {
-   // shaka_player.getNetworkingEngine().registerRequestFilter() ...
-       },
+            preferredAudioLanguage: 'pt-BR',
+            streaming: {
+  rebufferingGoal: 6,
+  bufferingGoal: 2,
+  retryParameters: {
+    timeout: 3000,
+    maxAttempts: 128,
+    baseDelay: 200,
+    backoffFactor: 4,
+    fuzzFactor: 0.5,
+  }
+}
+         },
+          shakaOnBeforeLoad: function(shaka_player) {
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+          },
 	  events: {
               onError: function(e) { errorPlaying() },			  		  
             },

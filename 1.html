@@ -1,4 +1,9 @@
 
+
+
+
+
+
  <html><head>
 <style id='page-skin-1' type='text/css'><!--
 *{margin:0; padding:0; }
@@ -18,10 +23,9 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
-<div id="overlay"></div>
 <script>
   function errorPlaying(){
-    url = "";
+    url = "/stream/6/98357.html";
     var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
@@ -34,7 +38,6 @@ var sv = getParam("sv");
     }
 
   }
-
 
 </script>
 
@@ -59,53 +62,6 @@ var sv = getParam("sv");
 
 <div class="container">
 <div id="vid"></div>
-	<style class="clappr-style">.DashShaka-playback {
-  height: 100%;
-  width: 100%; }
-  .DashShaka-playback .DashShaka-playback-background, .DashShaka-playback .DashShaka-playback-overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%; }
-  .DashShaka-playback .DashShakar-playback-background {
-    background-size: contain; }
-  .DashShaka-playback .DashShaka-playback-overlay {
-    background-color: #000;
-    opacity: 0.4; }
-
-.DashShaka-button {
-  background: transparent;
-  border: 0;
-  width: 32px;
-  height: 32px;
-  font-size: 22px;
-  line-height: 32px;
-  letter-spacing: 0;
-  margin: 0 6px;
-  color: #fff;
-  opacity: 0.5;
-  vertical-align: middle;
-  text-align: left;
-  cursor: pointer;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
-  transition: all 0.1s ease; }
-  .DashShaka-button:hover {
-    opacity: 0.75;
-    text-shadow: rgba(255, 255, 255, 0.8) 0 0 5px; }
-  .DashShaka-button:focus {
-    outline: none; }
-  .DashShaka-button svg {
-    width: 24px;
-    height: 24px; }
-    .DashShaka-button svg #cast, .DashShaka-button svg #cast-on, .DashShaka-button svg #Path {
-      fill: #fff;
-      stroke: #fff;
-      stroke-width: 0.5px; }
-</style>
-
 <script>
 var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoBAMAAAA1HFdiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAG1BMVEX5+fn//wAA//8A/wD/AP//AAAAAP8XFxf///8H5gWfAAAAAWJLR0QIht6VegAAAAd0SU1FB98IBRIsAXmGk48AAAI5SURBVHja7dJBDYBADADBs4AFLGABC1iohbOPhv1BMvu+NLlp10odqTN1pe7Uk5pQ8wMIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECDA/wKWxzM71T7ZZrfltNnppgACBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAL8B+ALjSfYzPnmdzgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOC0wNVQxODo0NDowMSswMTowMCL95a4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDgtMDVUMTg6NDQ6MDErMDE6MDBToF0SAAAAAElFTkSuQmCC",bindEvents:function(){this.listenTo(this.container,Clappr.Events.CONTAINER_ERROR,this.onError)},hide:function(){this._err&&this._err.remove()},show:function(){var A=Clappr.$;this.hide();var g=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,t=this.options.errorPlugin&&this.options.errorPlugin.text?this.options.errorPlugin.text:" موقع : كوره جي لايف";this._err=A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,"z-index":"99999",width:"100%",height:"100%","background-position":"center","background-image":"url("+this.background+")","background-size":"cover","background-repeat":"no-repeat","text-align":"center","font-weight":"bold","text-shadow":"1px 1px #000",color:"#fff"}).append(A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,background:"rgb(0,0,0,0.7)"}).append(A("<h2>").text(t).css({"font-size":"200%",top:"calc(50% - 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"})).append(A("<p>").html(' <span class="retry-counter">'+g+"</span>  بث مباشر لجميع المبارايات ").css({"font-size":"90%",top:"calc(50% + 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"}))),this.container&&this.container.$el.prepend(this._err)},onError:function(A){var g,t,o;this.container&&(this.show(),this.container.getPlugin("click_to_pause").disable(),t=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,(o=function(){if(clearTimeout(g),0===t)return this.container.getPlugin("click_to_pause").enable(),this.options.errorPlugin&&this.options.errorPlugin.onRetry?void this.options.errorPlugin.onRetry(A):(this.container.stop(),void this.container.play());$(".retry-counter").text(t),t--,g=setTimeout(o,1e3)}.bind(this))())}});  
 
@@ -118,6 +74,8 @@ var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"d
 
 	$( document ).ready( function(){
 	   player = new Clappr.Player({
+                        url:"https://live-sport24.com/onlineplayer.php?stream_id=2375546", 
+	   embed:"https://live-sport24.com/onlineplayer.php?stream_id=2375546",
 	     source: sv,
 		   fullscreen: false,
             mimeType: 'application/x-mpegURL',
@@ -235,31 +193,26 @@ setTimeout(plstst, 39000);
 
 </script>
 
-
-<script type="text/javascript">
-if(typeof player !== 'undefined'){
-
-  if(typeof player.version === 'undefined'){ //clappr
-    player.on(Clappr.Events.PLAYER_VOLUMEUPDATE, function(volume){
-        setCookie("volume", volume, 365);
-    });
-  } else {
-    if(typeof player.unmute === 'undefined'){//jwplayer
-      player.on('volume', function(volume){
-        setCookie("volume", volume.volume, 365);
-      });
-    } else { //bitmovin
-      player.on(bitmovin.player.PlayerEvent.VolumeChanged, function(cfg){
-        setCookie("volume", cfg.targetVolume, 365);
-      });
-      player.on(bitmovin.player.PlayerEvent.Error, function(err){
-        errorPlaying();
-      });
+<script>
+  function errorPlaying(){
+    url = "";
+    var a = document.createElement("a");
+    if (a.click) {
+        a.setAttribute("href", url);
+        a.setAttribute("target", "_self");
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+    } else {
+        location.href = url;
     }
+
   }
 
-}
 </script>
+	
+<div style='clear: both;'></div>
+<div class='no-items section' id='Clappr play'></div> 
 
 <style>
 /* <![CDATA[ */
@@ -363,4 +316,5 @@ textarea {
 
 </body>
 </html>
+
 

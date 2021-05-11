@@ -1,7 +1,9 @@
+
  <html><head>
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
 <style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style>
-	<script type="1126e12c05e649c436a3db9f-text/javascript">
+	 <meta charset="UTF-8"> 
+<script type="284f1f4c205e0a4bf799891f-text/javascript">
 function getParam ( sname )
 {
   var params = location.search.substr(location.search.indexOf("?")+1);
@@ -12,16 +14,16 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
-  <title>Bein Sport </title>
-  <meta charset="UTF-8">
+ 
+ <meta name="referrer" content="no-referrer">
   <meta http-equiv="X-Frame-Options" content="deny">
-<script src='https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js' type="1126e12c05e649c436a3db9f-text/javascript"></script>
-<script src='https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js' type="1126e12c05e649c436a3db9f-text/javascript"></script>
-<script src='https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js' type="1126e12c05e649c436a3db9f-text/javascript"></script>
+<script src='https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js' type="284f1f4c205e0a4bf799891f-text/javascript"></script>
+<script src='https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js' type="284f1f4c205e0a4bf799891f-text/javascript"></script>
+<script src='https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js' type="284f1f4c205e0a4bf799891f-text/javascript"></script>
    
 <body>
 <div id="player" style="width:100%;height:100%;"></div>
-<script type="1126e12c05e649c436a3db9f-text/javascript">
+<script type="284f1f4c205e0a4bf799891f-text/javascript">
 //<![CDATA[ 
 var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoBAMAAAA1HFdiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAG1BMVEX5+fn//wAA//8A/wD/AP//AAAAAP8XFxf///8H5gWfAAAAAWJLR0QIht6VegAAAAd0SU1FB98IBRIsAXmGk48AAAI5SURBVHja7dJBDYBADADBs4AFLGABC1iohbOPhv1BMvu+NLlp10odqTN1pe7Uk5pQ8wMIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECDA/wKWxzM71T7ZZrfltNnppgACBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAL8B+ALjSfYzPnmdzgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOC0wNVQxODo0NDowMSswMTowMCL95a4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDgtMDVUMTg6NDQ6MDErMDE6MDBToF0SAAAAAElFTkSuQmCC",bindEvents:function(){this.listenTo(this.container,Clappr.Events.CONTAINER_ERROR,this.onError)},hide:function(){this._err&&this._err.remove()},show:function(){var A=Clappr.$;this.hide();var g=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,t=this.options.errorPlugin&&this.options.errorPlugin.text?this.options.errorPlugin.text:" موقع : كوره جي لايف";this._err=A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,"z-index":"99999",width:"100%",height:"100%","background-position":"center","background-image":"url("+this.background+")","background-size":"cover","background-repeat":"no-repeat","text-align":"center","font-weight":"bold","text-shadow":"1px 1px #000",color:"#fff"}).append(A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,background:"rgb(0,0,0,0.7)"}).append(A("<h2>").text(t).css({"font-size":"200%",top:"calc(50% - 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"})).append(A("<p>").html(' <span class="retry-counter">'+g+"</span>  بث مباشر لجميع المبارايات ").css({"font-size":"90%",top:"calc(50% + 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"}))),this.container&&this.container.$el.prepend(this._err)},onError:function(A){var g,t,o;this.container&&(this.show(),this.container.getPlugin("click_to_pause").disable(),t=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,(o=function(){if(clearTimeout(g),0===t)return this.container.getPlugin("click_to_pause").enable(),this.options.errorPlugin&&this.options.errorPlugin.onRetry?void this.options.errorPlugin.onRetry(A):(this.container.stop(),void this.container.play());$(".retry-counter").text(t),t--,g=setTimeout(o,1e3)}.bind(this))())}});  
 
@@ -200,74 +202,7 @@ button.media-control-button.media-control-icon.stopped svg{height:16px!important
 .level_selector[data-level-selector] li:nth-child(1) a:before{content:'Auto';font-size:13px}
 .spinner-three-bounce[data-spinner]>div{display:none!important}
 </style>
-<script type="1126e12c05e649c436a3db9f-text/javascript">
-bool = false;
-var openedwin = false;
-var volumeSet = false;
-var loop = 0;
-    
-function getToVideo(e){
-    if(!openedwin){
-        window.open(popurl, '_blank');
-        openedwin = true;
-        popurltmp = popurl;
-        popurl = popurl2;
-        popurl2 = popurltmp;
-        $("#overlay").hide();
-        loop++;
-        if(loop == 1){
-            var timer=setTimeout(function(){
-                refreshdl();
-            },1000);
-        } else {
-          if(loop < 5){
-              var timer=setTimeout(function(){
-                  refreshdl();
-              },15000);
-          }
-        }
-        e.preventDefault();
-    }
-}
 
-$(document).on('touchend click', "#overlay", function(e) {
-    getToVideo(e);
-    if(!volumeSet && typeof player !== 'undefined'){
-      if(typeof player.version === 'undefined'){ //clappr
-        player.configure({hideMediaControl: "true"});
-      } else {
-        player.unmute();
-      }
-      player.setVolume(parseInt(pvolume));
-      volumeSet = true;
-      e.stopImmediatePropagation();
-    }
-});
-$(document).ready(function() {
-    if($.ads == undefined){
-      popurl = "";
-      //$("#site-contenedor .raulito").prop("src", "");
-    };
-    if(!isiOS && !isEdge){
-        $("body").append('<object data="data:application/pdf;base64,aG1t" width="1px" height="1px" style="position:absolute;top:-500px;left:-500px;visibility:hidden;" onerror="unsandbox();$(this).remove()"></object>');
-    }
-    if (!isInArray(hostname, whitelist)) {
-      vwu();
-      setInterval("vwu()", 300000);
-    }
-});
-
-function refreshdl(){
-    if(openedwin){
-        openedwin = false;
-        $("#overlay").show();
-    }
-}
-var timer=setTimeout(function(){
-    $('.close').fadeIn(300);
-},4000);
-  
-</script>
 <style>
 /* <![CDATA[ */
 
@@ -369,18 +304,6 @@ textarea {
 </style>
 
 
-<div style="visibility:hidden">
-
-<script type="1126e12c05e649c436a3db9f-text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,2829404,4,3021,130,80,00011111']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('http://s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-</div>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="1126e12c05e649c436a3db9f-|49" defer=""></script></body>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="284f1f4c205e0a4bf799891f-|49" defer=""></script></body>
 </body>
 </html>

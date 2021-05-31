@@ -56,9 +56,10 @@ var playerElement = document.getElementById('player');
 var player = new Clappr.Player({
                 parentId: "#Player",
                 source: sv,   
-               width: '100%',
+                width: '100%',
                 height: "100%",
                 autoPlay: true,
+		hideVolumeBar: true, 
                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',
                 mediacontrol: {seekbar: "#00ffff", buttons: "#00ffff"},
                 plugins: [DashShakaPlayback, LevelSelector],

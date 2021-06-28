@@ -64,33 +64,7 @@ body{margin:0;padding:0;background:#000;color:#fff;font-family:"Helvetica Neue",
 <div style="position:relative"></div> 
 <div id="player" style="width:100%;height:100%;"></div>
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
-function tvf(sv)
-{
-document.write('<scr'+'ipt type=\"text/javascript\">sv=['+sv+']</scr'+'ipt>');
-}
-function gParam(name)
-{
-  var start=location.search.indexOf("?"+name+"=");
-  if (start<0) start=location.search.indexOf("$"+name+"=");
-  if (start<0) return '';
-  start += name.length+2;
-  var end=location.search.indexOf("$",start)-1;
-  if (end<0) end=location.search.length;
-  var result='';
-  for(var i=start;i<=end;i++) {
-    var c=location.search.charAt(i);
-    result=result+(c=='+'?' ':c);
-  }
-  return unescape(result);
-}
-tvf(gParam('sv'));
-function load_player(sv_channel)
-{
-
-}
-
 var playerElement = document.getElementById('player');
-
 var player = new Clappr.Player({
                 parentId: "#Player",
                 source: sv,   
